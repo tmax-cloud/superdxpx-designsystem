@@ -1,0 +1,17 @@
+.treeUl{
+    box-sizing: border-box;
+    margin-block:0 ;
+}
+.treeLiItem{
+    width: 224px;
+    height:32px;
+    display:inline-flex;
+    flex-direction: row;
+    align-items: center;
+    padding:0 8px 0 2px;
+}
+.treeLiItemText{
+    color:#535D76;
+    font-size: 11px;
+    font-weight:600;
+}
