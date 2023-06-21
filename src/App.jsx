@@ -1,11 +1,21 @@
-import { TreeComponent } from 'component/tree/tree';
+import { TreeComponent } from 'component/tree/tree.tsx';
 
 export default function App() {
   return (
     <div>
-      <div>
-        <TreeComponent text="hello" onClick={() => console.log('hi')} />
-      </div>
+      <TreeComponent
+        TreeItemProps={[
+          { text: 'NumberOne', disabled: true },
+          {
+            text: 'NumberOne',
+            disabled: false,
+            TreeItemProps: [
+              { text: 'NumberOne', disabled: true },
+              { text: 'NumberOne', disabled: true },
+            ],
+          },
+        ]}
+      />
     </div>
   );
 }

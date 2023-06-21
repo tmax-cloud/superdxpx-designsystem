@@ -1,0 +1,9 @@
+body{
+    font-family: 'Inter', 'Noto Sans KR';
+}
+li,ul{
+    list-style: none;
+}
+.cursorPointer{
+    cursor:pointer
+}

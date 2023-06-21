@@ -34,7 +34,7 @@
     "jsx": "react-jsx",
     // baseUrl을 기준으로 관련된 위치에 모듈 이름의 경로 매핑 목록을 나열 "사용하려는 경로" : ["baseUrl을 기준으로 사용하려는 경로"]
     "paths": {
-      "components/*":["components/*"]
+      "components/*":["components/*"],
     },
     // 생성된 선언 파일의 출력 디렉토리
     "declarationDir": "./dist",
@@ -42,6 +42,6 @@
     "outDir": "./dist"
   },
   // 변환할 폴더 지정
-  "include": ["src/**/*", "./setupTest.ts"],
+  "include": ["src/**/*","global.d.ts"],
   "exclude": ["node_modules","dist"]
 }

@@ -10,5 +10,14 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
+  webpackFinal: async config => {
+    config.resolve = {
+      ...config.resolve,
+      //@ts-ignore
+      modules: [...config.resolve.modules, '../src'],
+      extensions: [...config.resolve?.extensions, '.css', '.ts', '.tsx', '.js', '.jsx'],
+    };
+    return config;
+  },
 };
 export default config;
