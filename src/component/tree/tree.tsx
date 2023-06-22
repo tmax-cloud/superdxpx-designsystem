@@ -21,7 +21,7 @@ type TreeItemPropsType = {
 
 const TreeComponent = ({ TreeItemProps }: TreeComponentPropsType) => {
   return (
-    <ul className="treeUl rootUl">
+    <ul className="rootTreeUl">
       {TreeItemProps.map((e: TreeItemPropsType, index) => (
         <TreeItem {...e} key={e.text + index} />
       ))}
@@ -34,6 +34,7 @@ const TreeItem = ({ text, icon, TreeItemProps, onClick, ...props }: TreeItemProp
   const onClickEvent = e => {
     setClick(!isClick);
     onClick && onClick(e);
+    console.log(e);
   };
   return (
     <li>
@@ -42,7 +43,7 @@ const TreeItem = ({ text, icon, TreeItemProps, onClick, ...props }: TreeItemProp
           {TreeItemProps && (isClick ? <img src={downArrow} alt="close" /> : <img src={rightArrow} alt="open" />)}
         </div>
         {icon && <span className="treeItemIcon">{icon}</span>}
-        <span className="treeLiItemText" {...props}>
+        <span className="treeLiItemText" {...props} title={text}>
           {text}
         </span>
         <img className="treeItemDropdownIcon" src={menuVertical} alt="메뉴" />
